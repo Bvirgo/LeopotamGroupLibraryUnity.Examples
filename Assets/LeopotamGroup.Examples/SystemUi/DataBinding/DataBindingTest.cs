@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using LeopotamGroup.Common;
 using LeopotamGroup.SystemUi.DataBinding;
 using UnityEngine;
@@ -24,7 +23,7 @@ namespace LeopotamGroup.Examples.SystemUi.DataBindingTest {
             set {
                 if (_value1 != value) {
                     _value1 = value;
-                    OnDataChanged ("Value1");
+                    OnBindedDataChanged (this, "Value1");
                 }
             }
         }
@@ -34,7 +33,7 @@ namespace LeopotamGroup.Examples.SystemUi.DataBindingTest {
             set {
                 if (_value2 != value) {
                     _value2 = value;
-                    OnDataChanged ("Value2");
+                    OnBindedDataChanged (this, "Value2");
                 }
             }
         }
@@ -44,7 +43,7 @@ namespace LeopotamGroup.Examples.SystemUi.DataBindingTest {
             set {
                 if (_value3 != value) {
                     _value3 = value;
-                    OnDataChanged ("Value3");
+                    OnBindedDataChanged (this, "Value3");
                 }
             }
         }
@@ -54,7 +53,7 @@ namespace LeopotamGroup.Examples.SystemUi.DataBindingTest {
             set {
                 if (_value4 != value) {
                     _value4 = value;
-                    OnDataChanged ("Value4");
+                    OnBindedDataChanged (this, "Value4");
                 }
             }
         }
@@ -64,12 +63,12 @@ namespace LeopotamGroup.Examples.SystemUi.DataBindingTest {
             set {
                 if (_value5 != value) {
                     _value5 = value;
-                    OnDataChanged ("Value5");
+                    OnBindedDataChanged (this, "Value5");
                 }
             }
         }
 
-        public event Action<string> OnDataChanged = delegate { };
+        public event OnBindedDataChangedHandler OnBindedDataChanged = delegate { };
     }
 
     class DataBindingTest : MonoBehaviour {
@@ -79,9 +78,11 @@ namespace LeopotamGroup.Examples.SystemUi.DataBindingTest {
         IEnumerator Start () {
             // create new data holder.
             var data = new TestData ();
+            var data1 = new TestData ();
 
             // connect data to binding system.
-            Singleton.Get<DataStorage> ().SetDataSource (data);
+            Singleton.Get<DataStorage> ().SetDataSource ("TestData", data);
+            Singleton.Get<DataStorage> ().SetDataSource ("TestData1", data1);
 
             var waiter = new WaitForSeconds (0.1f);
 
@@ -95,6 +96,7 @@ namespace LeopotamGroup.Examples.SystemUi.DataBindingTest {
                 }
                 if (_textures.Length > 0) {
                     data.Value5 = _textures[data.Value1 % _textures.Length];
+                    data1.Value5 = _textures[(data.Value1 / 8) % _textures.Length];
                 }
                 yield return waiter;
             }
