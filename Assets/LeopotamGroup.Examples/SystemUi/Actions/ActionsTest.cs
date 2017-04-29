@@ -50,9 +50,9 @@ namespace LeopotamGroup.Examples.SystemUi.ActionsTest {
         bool OnClick (UiClickActionData data) {
             // We can filter messages based on logical group id.
             if (data.GroupId == _onClickFilteredGroupId) {
-                Debug.Log ("OnClick: " + data.Receiver.name);
+                Debug.Log ("OnClick: " + data.Sender.name);
             } else {
-                Debug.Log ("OnClick: " + data.Receiver.name + ", but we will skip it.");
+                Debug.Log ("OnClick: " + data.Sender.name + ", but we will skip it.");
             }
             // We should return result - is event processed and should not be passed to other listeners.
             // Always return false, or check order of listeners subscription for proper interrupt processing of event.
@@ -61,44 +61,44 @@ namespace LeopotamGroup.Examples.SystemUi.ActionsTest {
 
         bool OnDrag (UiDragActionData data) {
             Debug.Log ("OnDrag: " + data.EventData.delta);
-            var pos = data.Receiver.transform.position;
+            var pos = data.Sender.transform.position;
             pos += new Vector3 (data.EventData.delta.x, data.EventData.delta.y, 0f);
-            data.Receiver.transform.position = pos;
+            data.Sender.transform.position = pos;
             return false;
         }
 
         bool OnRelease (UiReleaseActionData data) {
-            Debug.Log ("OnRelease: " + data.Receiver.name);
+            Debug.Log ("OnRelease: " + data.Sender.name);
             return false;
         }
 
         bool OnPress (UiPressActionData data) {
-            Debug.Log ("OnPress: " + data.Receiver.name);
+            Debug.Log ("OnPress: " + data.Sender.name);
             return false;
         }
 
         bool OnExit (UiExitActionData data) {
-            Debug.Log ("OnExit: " + data.Receiver.name);
+            Debug.Log ("OnExit: " + data.Sender.name);
             return false;
         }
 
         bool OnEnter (UiEnterActionData data) {
-            Debug.Log ("OnEnter: " + data.Receiver.name);
+            Debug.Log ("OnEnter: " + data.Sender.name);
             return false;
         }
 
         bool OnDeselect (UiDeselectActionData data) {
-            Debug.Log ("OnDeselect: " + data.Receiver.name);
+            Debug.Log ("OnDeselect: " + data.Sender.name);
             return false;
         }
 
         bool OnSelect (UiSelectActionData data) {
-            Debug.Log ("OnSelect: " + data.Receiver.name);
+            Debug.Log ("OnSelect: " + data.Sender.name);
             return false;
         }
 
         bool OnScroll (UiScrollActionData data) {
-            Debug.Log ("OnScroll: " + data.Receiver.name);
+            Debug.Log ("OnScroll: " + data.Sender.name);
             return false;
         }
     }

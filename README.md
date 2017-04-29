@@ -2,7 +2,7 @@
 
 Examples of [LeopotamGroup library for unity3d engine](https://github.com/Leopotam/LeopotamGroupLibraryUnity/).
 
-#### Unity tested version: 5.5.2f1.
+#### Unity tested version: 5.6.0f3.
 
 #### This repository uses main library code as git submodule, dont forget to init submodules after clone: "git submodule update --init"
 
@@ -88,6 +88,12 @@ structs and nested objects (lists, arrays, structs, etc).
 * SystemUi
 
 Helpers / performance replacements for uGui. DataBinding.
+
+----------------------------------------------------------------------------
+
+* Threading
+
+Background worker (except WebGl).
 
 ----------------------------------------------------------------------------
 
