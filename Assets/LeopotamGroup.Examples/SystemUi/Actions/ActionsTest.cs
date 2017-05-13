@@ -12,7 +12,7 @@ namespace LeopotamGroup.Examples.SystemUi.ActionsTest {
 
         void Awake () {
             // save groupId hash for fast filtering, we dont need to calculate hash each time for performance reason.
-            _onClickFilteredGroupId = _onClickFilteredGroup.GetHashCode ();
+            _onClickFilteredGroupId = _onClickFilteredGroup.GetUiActionGroupId ();
         }
 
         void OnEnable () {

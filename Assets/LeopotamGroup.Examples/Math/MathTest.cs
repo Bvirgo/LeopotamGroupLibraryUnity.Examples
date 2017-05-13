@@ -1,18 +1,77 @@
-﻿using LeopotamGroup.Common;
+﻿using System.Collections;
+using LeopotamGroup.Common;
 using LeopotamGroup.Math;
-using System.Collections;
 using UnityEngine;
 
 namespace LeopotamGroup.Examples.MathTest {
     public class MathTest : MonoBehaviour {
         IEnumerator Start () {
             yield return new WaitForSeconds (1f);
+            IntToShortStringTest ();
+            FloatToNormalizedStringTest ();
+            StringToFloatTest ();
+            StringToFloatUncheckedTest ();
             RngTest ();
             Vector2iTest ();
             Vector3iTest ();
             SinTest ();
             CosTest ();
             Atan2Test ();
+        }
+
+        void IntToShortStringTest () {
+            foreach (var item in new [] {
+                0,
+                123,
+                1234,
+                1234567,
+                -1234567,
+                1234567890
+            }) {
+                Debug.LogFormat ("{0}.ToStringWithSuffix = {1}", item, item.ToStringWithSuffix ());
+            }
+        }
+
+        void FloatToNormalizedStringTest () {
+            foreach (var item in new [] {
+                0f,
+                123f,
+                123.45678f,
+                123.45670f, -123.123f,
+                0.12345f,
+                0.00005f
+            }) {
+                Debug.LogFormat ("{0:0.#####}.ToStringFast = {1}", item, item.ToStringFast ());
+            }
+        }
+
+        void StringToFloatTest () {
+            foreach (var item in new [] {
+                "0",
+                "123",
+                "123.45678",
+                "123.45670",
+                "-123.123",
+                "0.12345",
+                "0.00005"
+            }) {
+                Debug.LogFormat ("{0}.ToFloat(invariant culture) = {1:0.#####}", item, item.ToFloat ());
+            }
+        }
+
+        void StringToFloatUncheckedTest () {
+            foreach (var item in new [] {
+                "0",
+                "123",
+                "123.45678",
+                "123.45670",
+                "-123.123",
+                "0.12345",
+                "0.00005"
+            }) {
+                Debug.LogFormat ("{0}.ToFloatUnchecked(invariant culture, GC optimized, [digits | '.' | '-']) = {1:0.#####}", item,
+                    item.ToFloatUnchecked ());
+            }
         }
 
         void RngTest () {
@@ -126,9 +185,9 @@ namespace LeopotamGroup.Examples.MathTest {
             Debug.Log (">>>>> atan2 tests >>>>>");
             const int T = 10000;
             var sw = new System.Diagnostics.Stopwatch ();
-#pragma warning disable 0219
+            #pragma warning disable 0219
             float f;
-#pragma warning restore 0219
+            #pragma warning restore 0219
             var sy = 1.234f;
             var sx = 2.345f;
 
@@ -155,7 +214,7 @@ namespace LeopotamGroup.Examples.MathTest {
                 sy = Singleton.Get<Rng> ().GetFloat () * MathFast.PI_2;
                 sx = Singleton.Get<Rng> ().GetFloat () * MathFast.PI_2;
                 Debug.LogFormat ("atan2({0}, {1}) error checking => {2} / {3}",
-                                 sy, sx, Mathf.Atan2 (sy, sx) * MathFast.Rad2Deg, MathFast.Atan2 (sy, sx) * MathFast.Rad2Deg);
+                    sy, sx, Mathf.Atan2 (sy, sx) * MathFast.Rad2Deg, MathFast.Atan2 (sy, sx) * MathFast.Rad2Deg);
             }
         }
     }
