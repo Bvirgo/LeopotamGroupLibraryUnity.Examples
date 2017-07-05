@@ -47,59 +47,48 @@ namespace LeopotamGroup.Examples.SystemUi.ActionsTest {
             }
         }
 
-        bool OnClick (UiClickActionData data) {
+        void OnClick (UiClickActionData data) {
             // We can filter messages based on logical group id.
             if (data.GroupId == _onClickFilteredGroupId) {
                 Debug.Log ("OnClick: " + data.Sender.name);
             } else {
                 Debug.Log ("OnClick: " + data.Sender.name + ", but we will skip it.");
             }
-            // We should return result - is event processed and should not be passed to other listeners.
-            // Always return false, or check order of listeners subscription for proper interrupt processing of event.
-            return false;
         }
 
-        bool OnDrag (UiDragActionData data) {
+        void OnDrag (UiDragActionData data) {
             Debug.Log ("OnDrag: " + data.EventData.delta);
             var pos = data.Sender.transform.position;
             pos += new Vector3 (data.EventData.delta.x, data.EventData.delta.y, 0f);
             data.Sender.transform.position = pos;
-            return false;
         }
 
-        bool OnRelease (UiReleaseActionData data) {
+        void OnRelease (UiReleaseActionData data) {
             Debug.Log ("OnRelease: " + data.Sender.name);
-            return false;
         }
 
-        bool OnPress (UiPressActionData data) {
+        void OnPress (UiPressActionData data) {
             Debug.Log ("OnPress: " + data.Sender.name);
-            return false;
         }
 
-        bool OnExit (UiExitActionData data) {
+        void OnExit (UiExitActionData data) {
             Debug.Log ("OnExit: " + data.Sender.name);
-            return false;
         }
 
-        bool OnEnter (UiEnterActionData data) {
+        void OnEnter (UiEnterActionData data) {
             Debug.Log ("OnEnter: " + data.Sender.name);
-            return false;
         }
 
-        bool OnDeselect (UiDeselectActionData data) {
+        void OnDeselect (UiDeselectActionData data) {
             Debug.Log ("OnDeselect: " + data.Sender.name);
-            return false;
         }
 
-        bool OnSelect (UiSelectActionData data) {
+        void OnSelect (UiSelectActionData data) {
             Debug.Log ("OnSelect: " + data.Sender.name);
-            return false;
         }
 
-        bool OnScroll (UiScrollActionData data) {
+        void OnScroll (UiScrollActionData data) {
             Debug.Log ("OnScroll: " + data.Sender.name);
-            return false;
         }
     }
 }
