@@ -38,9 +38,8 @@ namespace LeopotamGroup.Examples.EventsTest {
             _bus.Subscribe<TestEvent1> (OnEvent11);
             _bus.Subscribe<TestEvent1> (OnEvent12);
             _bus.Subscribe<TestEvent1> (d => {
-                // This callback should not be called due OnEvent2 interrupted execution flow.
+                // As lambda.
                 Debug.Log ("[EVENT1-SUBSCRIBER3] => " + d);
-                return false;
             });
 
             _bus.Subscribe<TestEvent2> (OnEvent21);
@@ -82,29 +81,24 @@ namespace LeopotamGroup.Examples.EventsTest {
             _bus.UnsubscribeAndClearAllEvents ();
         }
 
-        bool OnEvent11 (TestEvent1 msg) {
+        void OnEvent11 (TestEvent1 msg) {
             Debug.Log ("[EVENT1-SUBSCRIBER1] => " + msg);
-            return false;
         }
 
-        bool OnEvent12 (TestEvent1 msg) {
+        void OnEvent12 (TestEvent1 msg) {
             Debug.Log ("[EVENT1-SUBSCRIBER2] => " + msg + " -> interrupt execution flow of " + msg.GetType ().Name);
-            return true;
         }
 
-        bool OnEvent21 (TestEvent2 msg) {
+        void OnEvent21 (TestEvent2 msg) {
             Debug.Log ("[EVENT2-SUBSCRIBER] => " + msg);
-            return false;
         }
 
-        bool OnEvent31 (TestEvent3 msg) {
+        void OnEvent31 (TestEvent3 msg) {
             Debug.Log ("[EVENT3-SUBSCRIBER] => " + msg.StringValue);
-            return false;
         }
 
-        bool OnEventFloat (float msg) {
+        void OnEventFloat (float msg) {
             Debug.Log ("[FLOATEVENT-SUBSCRIBER] => " + msg);
-            return false;
         }
     }
 }

@@ -1743,7 +1743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23851fcfa63f0417d92ecaaa39a7cc2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _filteredGroup: test
+  _onClickFilteredGroup: 
 --- !u!4 &1427036586
 Transform:
   m_ObjectHideFlags: 0
@@ -2258,7 +2258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb3bd3ab7fe084e5b84dc31fd131b490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _group: test
+  _group: 
+  DragTreshold: 5
 --- !u!114 &1932284584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2382,7 +2383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb3bd3ab7fe084e5b84dc31fd131b490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _group: test2
+  _group: test
+  DragTreshold: 5
 --- !u!114 &1949725422
 MonoBehaviour:
   m_ObjectHideFlags: 0
