@@ -13,7 +13,7 @@ namespace LeopotamGroup.Examples.TutorialsTest {
         void OnGUI () {
             GUILayout.Label ((Content ?? "No content"));
             if (GUILayout.Button ("Move to next stage")) {
-                Singleton.Get<TutorialManager> ().RaiseNextBit ();
+                Services.Get<TutorialManager> (true).RaiseNextBit ();
             }
         }
     }

@@ -17,33 +17,35 @@ namespace LeopotamGroup.Examples.SystemUi.ActionsTest {
 
         void OnEnable () {
             // Subscribe to scene events pipeline.
-            Singleton.Get<UnityEventBus> ().Subscribe<UiClickActionData> (OnClick);
-            Singleton.Get<UnityEventBus> ().Subscribe<UiDragActionData> (OnDrag);
-            Singleton.Get<UnityEventBus> ().Subscribe<UiPressActionData> (OnPress);
-            Singleton.Get<UnityEventBus> ().Subscribe<UiReleaseActionData> (OnRelease);
-            Singleton.Get<UnityEventBus> ().Subscribe<UiEnterActionData> (OnEnter);
-            Singleton.Get<UnityEventBus> ().Subscribe<UiExitActionData> (OnExit);
-            Singleton.Get<UnityEventBus> ().Subscribe<UiSelectActionData> (OnSelect);
-            Singleton.Get<UnityEventBus> ().Subscribe<UiDeselectActionData> (OnDeselect);
-            Singleton.Get<UnityEventBus> ().Subscribe<UiScrollActionData> (OnScroll);
+            var ueb = Services.Get<UnityEventBus> (true);
+            ueb.Subscribe<UiClickActionData> (OnClick);
+            ueb.Subscribe<UiDragActionData> (OnDrag);
+            ueb.Subscribe<UiPressActionData> (OnPress);
+            ueb.Subscribe<UiReleaseActionData> (OnRelease);
+            ueb.Subscribe<UiEnterActionData> (OnEnter);
+            ueb.Subscribe<UiExitActionData> (OnExit);
+            ueb.Subscribe<UiSelectActionData> (OnSelect);
+            ueb.Subscribe<UiDeselectActionData> (OnDeselect);
+            ueb.Subscribe<UiScrollActionData> (OnScroll);
         }
 
         void OnDisable () {
             // Unsubscribe to scene events pipeline. We should check first - is pipeline still exists or already killed?
             // If you want to change scene - you can ignore unsibscription, UnityEventBus will try to do it automatically.
             // But better to cleanup it correctly in right way and at right time.
-            if (Singleton.IsTypeRegistered<UnityEventBus> ()) {
+            if (Services.IsTypeRegistered<UnityEventBus> ()) {
                 // You can set second parameter to true if you want to decrease memory allocation
                 // for same events at current scene.
-                Singleton.Get<UnityEventBus> ().Unsubscribe<UiClickActionData> (OnClick, true);
-                Singleton.Get<UnityEventBus> ().Unsubscribe<UiDragActionData> (OnDrag, true);
-                Singleton.Get<UnityEventBus> ().Unsubscribe<UiPressActionData> (OnPress, true);
-                Singleton.Get<UnityEventBus> ().Unsubscribe<UiReleaseActionData> (OnRelease, true);
-                Singleton.Get<UnityEventBus> ().Unsubscribe<UiEnterActionData> (OnEnter, true);
-                Singleton.Get<UnityEventBus> ().Unsubscribe<UiExitActionData> (OnExit, true);
-                Singleton.Get<UnityEventBus> ().Unsubscribe<UiSelectActionData> (OnSelect, true);
-                Singleton.Get<UnityEventBus> ().Unsubscribe<UiDeselectActionData> (OnDeselect, true);
-                Singleton.Get<UnityEventBus> ().Unsubscribe<UiScrollActionData> (OnScroll, true);
+                var ueb = Services.Get<UnityEventBus> ();
+                ueb.Unsubscribe<UiClickActionData> (OnClick, true);
+                ueb.Unsubscribe<UiDragActionData> (OnDrag, true);
+                ueb.Unsubscribe<UiPressActionData> (OnPress, true);
+                ueb.Unsubscribe<UiReleaseActionData> (OnRelease, true);
+                ueb.Unsubscribe<UiEnterActionData> (OnEnter, true);
+                ueb.Unsubscribe<UiExitActionData> (OnExit, true);
+                ueb.Unsubscribe<UiSelectActionData> (OnSelect, true);
+                ueb.Unsubscribe<UiDeselectActionData> (OnDeselect, true);
+                ueb.Unsubscribe<UiScrollActionData> (OnScroll, true);
             }
         }
 

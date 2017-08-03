@@ -81,8 +81,8 @@ namespace LeopotamGroup.Examples.SystemUi.DataBindingTest {
             var data1 = new TestData ();
 
             // connect data to binding system.
-            Singleton.Get<DataStorage> ().SetDataSource ("TestData", data);
-            Singleton.Get<DataStorage> ().SetDataSource ("TestData1", data1);
+            Services.Get<DataStorage> (true).SetDataSource ("TestData", data);
+            Services.Get<DataStorage> ().SetDataSource ("TestData1", data1);
 
             var waiter = new WaitForSeconds (0.1f);
 
