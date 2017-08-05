@@ -75,11 +75,12 @@ namespace LeopotamGroup.Examples.MathTest {
         }
 
         void RngTest () {
+            var rng = Service<Rng>.Get ();
             for (var i = 0; i < 5; i++) {
-                Debug.LogFormat ("Rng.GetFloat [0;1]: {0}", Singleton.Get<Rng> ().GetFloat (true));
+                Debug.LogFormat ("Rng.GetFloat [0;1]: {0}", rng.GetFloat (true));
             }
             for (var i = 0; i < 5; i++) {
-                Debug.LogFormat ("Rng.GetIntStatic [0;100): {0}", Singleton.Get<Rng> ().GetInt (100));
+                Debug.LogFormat ("Rng.GetIntStatic [0;100): {0}", rng.GetInt (100));
             }
         }
 
@@ -135,8 +136,9 @@ namespace LeopotamGroup.Examples.MathTest {
             sw.Stop ();
             Debug.LogFormat ("mathfast.sin time on {0} iterations: {1}", T, sw.ElapsedTicks);
 
+            var rng = Service<Rng>.Get ();
             for (int i = 0; i < 10; i++) {
-                f = Singleton.Get<Rng> ().GetFloat () * 3.1415926f * 2;
+                f = rng.GetFloat () * MathFast.PI_2;
                 Debug.LogFormat ("sin({0}) => {1} / {2}", f, Mathf.Sin (f), MathFast.Sin (f));
             }
         }
@@ -175,8 +177,9 @@ namespace LeopotamGroup.Examples.MathTest {
             sw.Stop ();
             Debug.LogFormat ("mathfast.cos time on {0} iterations: {1}", T, sw.ElapsedTicks);
 
+            var rng = Service<Rng>.Get ();
             for (int i = 0; i < 10; i++) {
-                f = Singleton.Get<Rng> ().GetFloat () * MathFast.PI_2;
+                f = rng.GetFloat () * MathFast.PI_2;
                 Debug.LogFormat ("cos({0}) error checking => {1} / {2}", f, Mathf.Cos (f), MathFast.Cos (f));
             }
         }
@@ -185,9 +188,9 @@ namespace LeopotamGroup.Examples.MathTest {
             Debug.Log (">>>>> atan2 tests >>>>>");
             const int T = 10000;
             var sw = new System.Diagnostics.Stopwatch ();
-            #pragma warning disable 0219
+#pragma warning disable 0219
             float f;
-            #pragma warning restore 0219
+#pragma warning restore 0219
             var sy = 1.234f;
             var sx = 2.345f;
 
@@ -210,9 +213,10 @@ namespace LeopotamGroup.Examples.MathTest {
             sw.Stop ();
             Debug.LogFormat ("mathfast.atan2 time on {0} iterations: {1}", T, sw.ElapsedTicks);
 
+            var rng = Service<Rng>.Get ();
             for (int i = 0; i < 10; i++) {
-                sy = Singleton.Get<Rng> ().GetFloat () * MathFast.PI_2;
-                sx = Singleton.Get<Rng> ().GetFloat () * MathFast.PI_2;
+                sy = rng.GetFloat () * MathFast.PI_2;
+                sx = rng.GetFloat () * MathFast.PI_2;
                 Debug.LogFormat ("atan2({0}, {1}) error checking => {2} / {3}",
                     sy, sx, Mathf.Atan2 (sy, sx) * MathFast.Rad2Deg, MathFast.Atan2 (sy, sx) * MathFast.Rad2Deg);
             }

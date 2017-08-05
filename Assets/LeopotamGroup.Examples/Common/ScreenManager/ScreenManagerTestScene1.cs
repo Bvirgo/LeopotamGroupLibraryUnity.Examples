@@ -9,10 +9,9 @@ namespace LeopotamGroup.Examples.Common.ScreenManagerTest {
 
         void OnGUI () {
             GUILayout.Label (
-                string.Format ("Add both scenes ('{0}', '{1}') from this folder to BuildSettings and press button",
-                               Scene1Name, Scene2Name));
+                string.Format ("Add both scenes '{0}', '{1}' to BuildSettings and press button", Scene1Name, Scene2Name));
             if (GUILayout.Button ("Go to second scene")) {
-                Singleton.Get<ScreenManager> ().NavigateTo (Scene2Name, true);
+                Service<ScreenManager>.Get ().NavigateTo (Scene2Name, true);
             }
         }
     }

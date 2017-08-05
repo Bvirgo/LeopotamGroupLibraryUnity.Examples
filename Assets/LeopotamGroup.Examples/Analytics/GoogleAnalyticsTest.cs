@@ -5,7 +5,7 @@ using UnityEngine;
 namespace LeopotamGroup.Examples.Analytics.GoogleAnalyticsTest {
     public class GoogleAnalyticsTest : MonoBehaviour {
         void OnGUI () {
-            var ga = Singleton.Get<GoogleAnalyticsManager> ();
+            var ga = Service<GoogleAnalyticsManager>.Get ();
             if (!ga.IsInited) {
                 GUILayout.Label ("Fill TrackerID field for GoogleAnalytics object first!");
                 return;
