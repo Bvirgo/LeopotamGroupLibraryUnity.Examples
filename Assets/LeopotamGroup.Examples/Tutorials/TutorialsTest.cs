@@ -9,10 +9,10 @@ namespace LeopotamGroup.Examples.TutorialsTest {
             // you can reset it for all scenes with calling
             // TutorialManager.Instance.ClearAllData (true), or
             // for current screen with calling TutorialManager.Instance.SetAll (false)
-            Services.Get<TutorialManager> (true).SetAll (false);
+            Singleton.Get<TutorialManager> ().SetAll (false);
 
             // Initiate tutorial sequence.
-            Services.Get<TutorialManager> ().RaiseNextBit ();
+            Singleton.Get<TutorialManager> ().RaiseNextBit ();
         }
     }
 }

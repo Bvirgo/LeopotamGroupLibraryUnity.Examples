@@ -6,7 +6,7 @@ namespace LeopotamGroup.Examples.EditorHelpers.FpsCounterTest {
     public class FpsCounterTest : MonoBehaviour {
         void Start () {
             // Just touch any FpsCounter singleton class member - fps counter will be shown cross all scenes.
-            Services.Get<FpsCounter> (true);
+            Singleton.Get<FpsCounter> ();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace LeopotamGroup.Examples.ThreadingTest {
 
         void Update () {
             // try to spam worker with test data.
-            var worker = Services.Get<BackgroundWorker> (true);
+            var worker = Singleton.Get<BackgroundWorker> ();
             if (worker.IsWorkerStarted) {
                 worker.EnqueueItem (_iterator++);
             }
