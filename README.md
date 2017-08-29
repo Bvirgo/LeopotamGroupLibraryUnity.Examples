@@ -2,9 +2,13 @@
 
 Examples of [LeopotamGroup library for unity3d engine](https://github.com/Leopotam/LeopotamGroupLibraryUnity/).
 
-#### Unity tested version: 5.6.1 / (2017.1.0b6).
+#### Unity tested version: 2017.1.0f3.
 
-#### This repository uses main library code as git submodule, dont forget to init submodules after clone: "git submodule update --init"
+----------------------------------------------------------------------------
+
+> This repository uses main library code as git submodule, dont forget to init submodules after clone: "git submodule update --init"
+
+----------------------------------------------------------------------------
 
 ## CODE STRUCTURE
 
@@ -51,12 +55,6 @@ Localization support.
 * Math
 
 Additional types, 'mersenne twister'-based RNG, fast xor-shift RNG, etc.
-
-----------------------------------------------------------------------------
-
-* Mobile
-
-Helpers for mobiles only.
 
 ----------------------------------------------------------------------------
 
