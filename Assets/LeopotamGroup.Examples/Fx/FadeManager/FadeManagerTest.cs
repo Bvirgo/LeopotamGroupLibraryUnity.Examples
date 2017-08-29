@@ -13,7 +13,7 @@ namespace LeopotamGroup.Examples.EditorHelpers.FadeManagerTest {
             if (!_isLocked) {
                 if (GUILayout.Button ("Fade in/ Fade out")) {
                     _isLocked = true;
-                    Singleton.Get<FadeManager> ().Process (_color1, _color2, 1f, () => {
+                    Service<FadeManager>.Get ().Process (_color1, _color2, 1f, () => {
                         var t = _color1;
                         _color1 = _color2;
                         _color2 = t;

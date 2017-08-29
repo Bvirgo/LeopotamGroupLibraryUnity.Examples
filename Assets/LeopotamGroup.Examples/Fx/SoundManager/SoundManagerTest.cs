@@ -9,9 +9,8 @@ namespace LeopotamGroup.Examples.FX.SoundManagerTest {
 
         const string MusicName = "Music/Forest";
 
-        // ReSharper disable once InconsistentNaming
         void OnGUI () {
-            var sm = Singleton.Get<SoundManager> ();
+            var sm = Service<SoundManager>.Get ();
             if (GUILayout.Button ("Turn on music")) {
                 sm.PlayMusic (MusicName, true);
             }

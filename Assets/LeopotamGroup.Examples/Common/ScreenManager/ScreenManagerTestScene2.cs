@@ -6,7 +6,7 @@ namespace LeopotamGroup.Examples.Common.ScreenManagerTest {
         void OnGUI () {
             GUILayout.Label ("Second scene loaded!");
             if (GUILayout.Button ("Go back to first scene")) {
-                Singleton.Get<ScreenManager> ().NavigateBack ();
+                Service<ScreenManager>.Get ().NavigateBack ();
             }
         }
     }
