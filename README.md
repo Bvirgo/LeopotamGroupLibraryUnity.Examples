@@ -2,7 +2,7 @@
 
 Examples of [LeopotamGroup library for unity3d engine](https://github.com/Leopotam/LeopotamGroupLibraryUnity/).
 
-#### Unity tested version: 2017.1.0f3.
+#### Unity tested version: 2017.2.0f3.
 
 ----------------------------------------------------------------------------
 
