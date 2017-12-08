@@ -70,12 +70,6 @@ Protection for Int, Long, Float types from in-memory searching.
 
 ----------------------------------------------------------------------------
 
-* Questbook
-
-C# implementation of [Questbook format](https://github.com/Leopotam/questbook).
-
-----------------------------------------------------------------------------
-
 * Scripting
 
 Embedded scripting engine, optimized for low gc usage.
