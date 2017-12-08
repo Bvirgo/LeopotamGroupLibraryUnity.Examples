@@ -1,4 +1,4 @@
-﻿using LeopotamGroup.Protection;
+using LeopotamGroup.Protection;
 using UnityEngine;
 
 namespace LeopotamGroup.Examples.ProtectionTest {

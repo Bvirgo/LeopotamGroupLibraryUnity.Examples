@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using LeopotamGroup.Common;
 using LeopotamGroup.SystemUi.DataBinding;
 using UnityEngine;

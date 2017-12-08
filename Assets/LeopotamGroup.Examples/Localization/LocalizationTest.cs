@@ -1,22 +1,23 @@
-﻿using LeopotamGroup.Localization;
-using UnityEngine.Scripting;
+using LeopotamGroup.Localization;
 using UnityEngine;
+using UnityEngine.Scripting;
 
 namespace LeopotamGroup.Examples.LocalizationTest {
     public class LocalizationTest : MonoBehaviour {
         const string TestKey = "common.language";
 
         void OnGUI () {
-            GUILayout.Label ("You can create localization file for all supported languages,\n" +
-                             "name it 'Localization.csv' and place at 'Resources' folder.\n" +
-                             "Good decision - use 'google docs' or 'office excel' with csv export.\n\n" +
-                             "Default language is 'English', user choice will be saved to user prefs.");
-            foreach (var item in new[] {
-                "English",
-                "Russian",
-                "German",
-                "French"
-            }) {
+            GUILayout.Label (
+                "You can create localization file for all supported languages,\n" +
+                "name it 'Localization.csv' and place at 'Resources' folder.\n" +
+                "Good decision - use 'google docs' or 'office excel' with csv export.\n\n" +
+                "Default language is 'English', user choice will be saved to user prefs.");
+            foreach (var item in new [] {
+                    "English",
+                    "Russian",
+                    "German",
+                    "French"
+                }) {
                 if (GUILayout.Button (item)) {
                     // After change language OnLocalize method notification will be sent to scene.
                     // It can be used for relocalize custom user content (labels, sprite names, etc).
