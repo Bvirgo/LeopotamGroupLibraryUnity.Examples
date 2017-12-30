@@ -1,4 +1,4 @@
-﻿using LeopotamGroup.Threading;
+using LeopotamGroup.Threading;
 using UnityEngine;
 
 namespace LeopotamGroup.Examples.ThreadingTest {

@@ -1,5 +1,5 @@
-﻿using LeopotamGroup.Common;
 using System.Collections;
+using LeopotamGroup.Common;
 using UnityEngine;
 
 namespace LeopotamGroup.Examples.Common.MonoBehaviourTest {

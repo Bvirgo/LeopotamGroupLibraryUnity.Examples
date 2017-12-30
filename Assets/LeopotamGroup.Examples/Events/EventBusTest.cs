@@ -1,4 +1,4 @@
-﻿using LeopotamGroup.Events;
+using LeopotamGroup.Events;
 using UnityEngine;
 
 namespace LeopotamGroup.Examples.EventsTest {

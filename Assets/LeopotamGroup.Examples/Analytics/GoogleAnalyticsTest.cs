@@ -1,4 +1,4 @@
-﻿using LeopotamGroup.Analytics;
+using LeopotamGroup.Analytics;
 using LeopotamGroup.Common;
 using UnityEngine;
 

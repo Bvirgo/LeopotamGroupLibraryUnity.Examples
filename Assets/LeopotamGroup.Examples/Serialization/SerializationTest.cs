@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using LeopotamGroup.Common;
 using LeopotamGroup.Serialization;
 using UnityEngine;

@@ -1,4 +1,4 @@
-﻿using LeopotamGroup.Scripting;
+using LeopotamGroup.Scripting;
 using UnityEngine;
 
 namespace LeopotamGroup.Examples.ScriptingTest {

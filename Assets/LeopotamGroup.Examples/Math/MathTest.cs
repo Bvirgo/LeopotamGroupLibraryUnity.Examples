@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using LeopotamGroup.Common;
 using LeopotamGroup.Math;
 using UnityEngine;
@@ -21,54 +21,54 @@ namespace LeopotamGroup.Examples.MathTest {
 
         void IntToShortStringTest () {
             foreach (var item in new [] {
-                0,
-                123,
-                1234,
-                1234567,
-                -1234567,
-                1234567890
-            }) {
+                    0,
+                    123,
+                    1234,
+                    1234567,
+                    -1234567,
+                    1234567890
+                }) {
                 Debug.LogFormat ("{0}.ToStringWithSuffix = {1}", item, item.ToStringWithSuffix ());
             }
         }
 
         void FloatToNormalizedStringTest () {
             foreach (var item in new [] {
-                0f,
-                123f,
-                123.45678f,
-                123.45670f, -123.123f,
-                0.12345f,
-                0.00005f
-            }) {
+                    0f,
+                    123f,
+                    123.45678f,
+                    123.45670f, -123.123f,
+                    0.12345f,
+                    0.00005f
+                }) {
                 Debug.LogFormat ("{0:0.#####}.ToStringFast = {1}", item, item.ToStringFast ());
             }
         }
 
         void StringToFloatTest () {
             foreach (var item in new [] {
-                "0",
-                "123",
-                "123.45678",
-                "123.45670",
-                "-123.123",
-                "0.12345",
-                "0.00005"
-            }) {
+                    "0",
+                    "123",
+                    "123.45678",
+                    "123.45670",
+                    "-123.123",
+                    "0.12345",
+                    "0.00005"
+                }) {
                 Debug.LogFormat ("{0}.ToFloat(invariant culture) = {1:0.#####}", item, item.ToFloat ());
             }
         }
 
         void StringToFloatUncheckedTest () {
             foreach (var item in new [] {
-                "0",
-                "123",
-                "123.45678",
-                "123.45670",
-                "-123.123",
-                "0.12345",
-                "0.00005"
-            }) {
+                    "0",
+                    "123",
+                    "123.45678",
+                    "123.45670",
+                    "-123.123",
+                    "0.12345",
+                    "0.00005"
+                }) {
                 Debug.LogFormat ("{0}.ToFloatUnchecked(invariant culture, GC optimized, [digits | '.' | '-']) = {1:0.#####}", item,
                     item.ToFloatUnchecked ());
             }

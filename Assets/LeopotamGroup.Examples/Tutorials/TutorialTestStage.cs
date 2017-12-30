@@ -1,4 +1,4 @@
-﻿using LeopotamGroup.Common;
+using LeopotamGroup.Common;
 using LeopotamGroup.Tutorials;
 using UnityEngine;
 
