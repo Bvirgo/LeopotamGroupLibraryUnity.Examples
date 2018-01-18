@@ -12,8 +12,6 @@ namespace LeopotamGroup.Examples.MathTest {
             StringToFloatTest ();
             StringToFloatUncheckedTest ();
             RngTest ();
-            Vector2iTest ();
-            Vector3iTest ();
             SinTest ();
             CosTest ();
             Atan2Test ();
@@ -82,24 +80,6 @@ namespace LeopotamGroup.Examples.MathTest {
             for (var i = 0; i < 5; i++) {
                 Debug.LogFormat ("Rng.GetIntStatic [0;100): {0}", rng.GetInt (100));
             }
-        }
-
-        void Vector2iTest () {
-            var v2i_0 = new Vector2i (1, 2);
-            var v2i_1 = new Vector2i (3, 4);
-            Debug.LogFormat ("{0} + {1} = {2}", v2i_0, v2i_1, v2i_0 + v2i_1);
-            Debug.LogFormat ("{0} - {1} = {2}", v2i_0, v2i_1, v2i_0 - v2i_1);
-            Debug.LogFormat ("{0} * {1} = {2}", v2i_0, v2i_1, v2i_0 * v2i_1);
-            Debug.LogFormat ("{0} / {1} = {2}", v2i_0, v2i_1, v2i_0 / v2i_1);
-        }
-
-        void Vector3iTest () {
-            var v3i_0 = new Vector3i (1, 2, 3);
-            var v3i_1 = new Vector3i (4, 5, 6);
-            Debug.LogFormat ("{0} + {1} = {2}", v3i_0, v3i_1, v3i_0 + v3i_1);
-            Debug.LogFormat ("{0} - {1} = {2}", v3i_0, v3i_1, v3i_0 - v3i_1);
-            Debug.LogFormat ("{0} * {1} = {2}", v3i_0, v3i_1, v3i_0 * v3i_1);
-            Debug.LogFormat ("{0} / {1} = {2}", v3i_0, v3i_1, v3i_0 / v3i_1);
         }
 
         void SinTest () {
