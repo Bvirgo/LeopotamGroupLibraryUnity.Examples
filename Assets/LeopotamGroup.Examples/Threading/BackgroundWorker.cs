@@ -5,7 +5,7 @@ namespace LeopotamGroup.Examples.ThreadingTest {
     /// <summary>
     /// Custom background worker.
     /// </summary>
-    public class BackgroundWorker : BackgroundWorkerBase<int> {
+    public class BackgroundWorker : BackgroundWorkerBase<BackgroundWorker, int> {
         // optional.
         protected override void OnWorkerStartInBackground () {
             Debug.Log ("[WORKER] Started");
