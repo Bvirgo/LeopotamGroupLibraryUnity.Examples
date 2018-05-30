@@ -2,7 +2,7 @@ using LeopotamGroup.Scripting;
 using UnityEngine;
 
 namespace LeopotamGroup.Examples.ScriptingTest {
-    class MyScriptManager : ScriptManagerBase {
+    class MyScriptManager : ScriptManagerBase<MyScriptManager> {
         protected override void OnAttachHostFunctions (ScriptVm vm) {
             base.OnAttachHostFunctions (vm);
 
